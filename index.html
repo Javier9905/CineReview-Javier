@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="CineReview Javier: catálogo web de reseñas cinematográficas actualizado con Sass, Git y Bitbucket para la actividad de profundización.">
+  <title>PIC CineReview Javier | Reseñas cinematográficas</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="site-header sticky-top">
+    <nav class="navbar navbar-expand-lg navbar-dark container" aria-label="Menú principal">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <span class="brand-icon">🎬</span> CineReview Javier
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menú">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="menuPrincipal">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link active" href="#peliculas">Películas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#favoritas">Favoritas</a></li>
+          <li class="nav-item"><a class="nav-link" href="#analisis">Análisis</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sass">Sass</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero text-white">
+      <div class="container hero__content">
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-7">
+            <span class="hero__badge">Actividad No. 3 · Profundización Front-End</span>
+            <h1>Catálogo web de reseñas cinematográficas</h1>
+            <p class="lead">
+              Proyecto original de contextualización actualizado con Sass, estructura responsive,
+              componentes visuales más profesionales y preparación para repositorio remoto en Bitbucket.
+            </p>
+            <div class="hero__actions">
+              <a href="#peliculas" class="btn btn-warning btn-lg fw-semibold">Explorar catálogo</a>
+              <a href="#sass" class="btn btn-outline-light btn-lg fw-semibold">Ver evidencia Sass</a>
+            </div>
+          </div>
+          <div class="col-12 col-lg-5">
+            <aside class="hero-panel" aria-label="Resumen del proyecto">
+              <div class="panel-tag">Actualización del proyecto de contextualización</div>
+              <div class="hero-panel__top">
+                <span></span><span></span><span></span>
+              </div>
+              <h2>Resumen académico del proyecto</h2>
+              <p class="hero-panel__intro">
+                CineReview Javier fue fortalecido en esta etapa de profundización para evidenciar el uso de Sass,
+                control de versiones con Git y preparación del repositorio público en Bitbucket.
+              </p>
+              <ul class="project-specs">
+                <li><strong>Proyecto base:</strong> catálogo web de reseñas cinematográficas.</li>
+                <li><strong>Objetivo:</strong> actualizar el front-end con mejores prácticas y componentes escalables.</li>
+                <li><strong>Curso:</strong> Desarrollo de Software Web Front-End.</li>
+                <li><strong>Evidencia técnica:</strong> variables Sass, anidación e interpolación.</li>
+                <li><strong>Resultado:</strong> experiencia responsive con búsqueda, filtros, favoritas y vista de detalle.</li>
+              </ul>
+              <div class="hero-panel__chips" aria-label="Características del proyecto">
+                <span>Sass integrado</span>
+                <span>Responsive</span>
+                <span>Bitbucket listo</span>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="container section-block" id="peliculas">
+      <div class="section-heading">
+        <span>Catálogo interactivo</span>
+        <h2>Encuentra tu próxima película favorita</h2>
+        <p>
+          Explora reseñas breves, filtra por género, ordena por fecha y guarda favoritas durante la navegación.
+        </p>
+      </div>
+
+      <div class="student-strip mb-4">
+        <div>
+          <strong>Estudiante:</strong> Javier Andrés Barrera Cárdenas
+        </div>
+        <div>
+          <strong>Proyecto:</strong> PIC CineReview Javier
+        </div>
+      </div>
+
+      <div class="row g-3 filter-panel mb-4">
+        <div class="col-12 col-md-6">
+          <label for="buscador" class="form-label fw-semibold">Buscar película</label>
+          <input id="buscador" class="form-control form-control-lg" type="search" placeholder="Ejemplo: Interestelar, Coco, Avatar...">
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <label for="filtroGenero" class="form-label fw-semibold">Filtrar por género</label>
+          <select id="filtroGenero" class="form-select form-select-lg">
+            <option value="todas">Todas</option>
+            <option value="Ciencia ficción">Ciencia ficción</option>
+            <option value="Animación">Animación</option>
+            <option value="Acción">Acción</option>
+            <option value="Drama">Drama</option>
+          </select>
+        </div>
+        <div class="col-12 col-sm-6 col-md-3">
+          <label for="ordenFecha" class="form-label fw-semibold">Ordenar</label>
+          <select id="ordenFecha" class="form-select form-select-lg">
+            <option value="recientes">Más recientes</option>
+            <option value="antiguas">Más antiguas</option>
+            <option value="rating">Mejor calificación</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="row g-3 mb-4" aria-label="Indicadores del catálogo">
+        <div class="col-12 col-md-4">
+          <div class="metric-card metric-card--primary">
+            <span>Total de películas</span>
+            <strong id="totalPeliculas">0</strong>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="metric-card metric-card--secondary">
+            <span>Promedio de rating</span>
+            <strong id="promedioRating">0.0</strong>
+          </div>
+        </div>
+        <div class="col-12 col-md-4">
+          <div class="metric-card metric-card--accent">
+            <span>Favoritas guardadas</span>
+            <strong id="totalFavoritas">0</strong>
+          </div>
+        </div>
+      </div>
+
+      <div id="contenedorPeliculas" class="row g-4"></div>
+    </section>
+
+    <section class="section-block section-block--soft" id="favoritas">
+      <div class="container">
+        <div class="section-heading section-heading--left">
+          <span>Experiencia personalizada</span>
+          <h2>Lista de favoritas</h2>
+          <p>Las películas marcadas como favoritas aparecerán aquí usando almacenamiento local del navegador.</p>
+        </div>
+        <div id="contenedorFavoritas" class="row g-3"></div>
+      </div>
+    </section>
+
+    <section class="container section-block" id="analisis">
+      <div class="section-heading">
+        <span>Análisis del producto</span>
+        <h2>Problema, solución y valor académico</h2>
+      </div>
+      <div class="row g-4">
+        <article class="col-12 col-lg-4">
+          <div class="analysis-card">
+            <div class="analysis-card__icon">01</div>
+            <h3>Problema</h3>
+            <p>El usuario necesita comparar películas de forma rápida sin perder tiempo revisando información desorganizada en diferentes sitios.</p>
+          </div>
+        </article>
+        <article class="col-12 col-lg-4">
+          <div class="analysis-card">
+            <div class="analysis-card__icon">02</div>
+            <h3>Solución</h3>
+            <p>El catálogo centraliza reseñas, género, calificación, fecha, detalle y favoritos en una interfaz responsive y fácil de navegar.</p>
+          </div>
+        </article>
+        <article class="col-12 col-lg-4">
+          <div class="analysis-card">
+            <div class="analysis-card__icon">03</div>
+            <h3>Resultado</h3>
+            <p>El proyecto evidencia construcción front-end, uso de componentes visuales, JavaScript para interacción y Sass para estilos escalables.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block section-block--dark" id="sass">
+      <div class="container">
+        <div class="sass-overview">
+          <div class="section-heading section-heading--left mb-0">
+            <span>Cumplimiento de la actividad</span>
+            <h2>Implementación técnica en la etapa de profundización</h2>
+            <p>
+              Esta actualización del proyecto original integra Sass de forma estructurada y deja el entregable preparado
+              para su publicación en Bitbucket, cumpliendo con los requerimientos centrales de la actividad.
+            </p>
+          </div>
+          <div class="sass-summary" aria-label="Resumen de cumplimiento">
+            <div><strong>Proyecto base:</strong> CineReview Javier</div>
+            <div><strong>Entorno:</strong> HTML, Bootstrap, JavaScript y Sass</div>
+            <div><strong>Entrega:</strong> repositorio remoto y archivo comprimido</div>
+          </div>
+        </div>
+        <div class="row g-4 mt-1">
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="sass-card">
+              <span class="sass-card__label">Requisito 01</span>
+              <h3>Variables Sass</h3>
+              <p>Se definieron variables para paleta de color, tipografía, radios, sombras y espaciado, facilitando consistencia visual y mantenimiento del proyecto.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-xl-4">
+            <div class="sass-card">
+              <span class="sass-card__label">Requisito 02</span>
+              <h3>Anidación de selectores</h3>
+              <p>Los estilos de secciones, paneles, tarjetas y navegación se organizaron con selectores anidados para que el código sea más claro, escalable y profesional.</p>
+            </div>
+          </div>
+          <div class="col-12 col-md-12 col-xl-4">
+            <div class="sass-card">
+              <span class="sass-card__label">Requisito 03</span>
+              <h3>Interpolación en Sass</h3>
+              <p>Se implementaron dos casos de interpolación con <code>#{$...}</code> para generar clases reutilizables, cumpliendo de forma explícita lo solicitado por la guía.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__content">
+      <p>© 2026 · PIC CineReview Javier · Desarrollo de Software Web Front-End</p>
+      <p>UCompensar · Javier Andrés Barrera Cárdenas</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
