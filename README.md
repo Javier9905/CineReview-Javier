@@ -78,36 +78,3 @@ $genre-badge-class: "badge-genero";
 .#{$genre-badge-class} { }
 ```
 
-## 4. Cómo ejecutar el proyecto
-
-1. Descomprimir el archivo ZIP.
-2. Abrir la carpeta en Visual Studio Code.
-3. Abrir `index.html` en el navegador.
-4. Navegar por el catálogo y probar búsqueda, filtros, favoritas y detalle.
-
-## 5. Cómo recompilar Sass
-
-Si deseas modificar el archivo Sass, puedes recompilarlo así:
-
-```bash
-npm install
-npm run sass
-```
-
-O directamente:
-
-```bash
-sass scss/styles.scss css/estilos.css
-```
-
-## 6. Subida a Bitbucket
-
-1. Crear un repositorio público en Bitbucket.
-2. Abrir la carpeta del proyecto en Visual Studio Code.
-3. Ejecutar los comandos indicados en `docs/INSTRUCCIONES_BITBUCKET.md`.
-4. Copiar el enlace público del repositorio.
-5. Adjuntar el ZIP y el enlace en el aula virtual.
-
-## 7. Nombre sugerido para la entrega
-
-`PIC_CineReview_Javier_Profundizacion.zip`
