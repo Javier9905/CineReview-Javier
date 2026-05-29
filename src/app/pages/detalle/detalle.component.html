@@ -1,0 +1,54 @@
+<section class="detail-hero">
+  <div class="container">
+    <a routerLink="/" class="btn btn-outline-dark mb-4">Volver al listado</a>
+    <div class="row g-4 align-items-center">
+      <div class="col-12 col-lg-5">
+        <img class="detalle-img shadow" [src]="pelicula.imagen" [alt]="'Imagen representativa de ' + pelicula.titulo">
+      </div>
+      <article class="col-12 col-lg-7 detail-content">
+        <span class="badge badge-genero mb-3">{{ pelicula.genero }}</span>
+        <h1>{{ pelicula.titulo }}</h1>
+        <p class="rating fs-4">* {{ pelicula.rating }}</p>
+        <p><strong>Fecha de estreno:</strong> {{ pelicula.fecha | date:'longDate' }}</p>
+        <p><strong>Actores principales:</strong> {{ pelicula.actores }}</p>
+        <h2>Sinopsis</h2>
+        <p>{{ pelicula.sinopsis }}</p>
+        <h2>Resena</h2>
+        <p>{{ pelicula.resena }}</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="container section-block pt-0">
+  <div class="comment-box">
+    <div class="section-heading section-heading--left">
+      <span>Participacion del usuario</span>
+      <h2>Comentarios</h2>
+      <p>Funcionalidad complementaria para registrar opiniones durante la sesion.</p>
+    </div>
+    <form class="card shadow-sm border-0 p-4 mb-4" (ngSubmit)="agregarComentario()">
+      <div class="row g-3">
+        <div class="col-12 col-md-4">
+          <label for="nombre" class="form-label fw-semibold">Nombre</label>
+          <input id="nombre" name="nombre" class="form-control" placeholder="Escribe tu nombre" required [(ngModel)]="nombre">
+        </div>
+        <div class="col-12 col-md-8">
+          <label for="comentario" class="form-label fw-semibold">Comentario</label>
+          <textarea id="comentario" name="comentario" class="form-control" rows="3" placeholder="Escribe tu opinion" required [(ngModel)]="comentario"></textarea>
+        </div>
+      </div>
+      <button class="btn btn-warning fw-semibold mt-3" type="submit">Agregar comentario</button>
+    </form>
+    <div class="vstack gap-3">
+      @for (item of comentarios; track item.nombre + item.comentario) {
+        <div class="comentario-item">
+          <strong>{{ item.nombre }}</strong>
+          <p class="mb-0">{{ item.comentario }}</p>
+        </div>
+      } @empty {
+        <p class="empty-state mb-0">Todavia no hay comentarios para esta pelicula.</p>
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,19 @@
+<header class="site-header sticky-top">
+  <nav class="navbar navbar-expand-lg navbar-dark container" aria-label="Menu principal">
+    <a class="navbar-brand fw-bold" routerLink="/">
+      <span class="brand-icon">C</span> CineReview Javier
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuPrincipal" aria-controls="menuPrincipal" aria-expanded="false" aria-label="Abrir menu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="menuPrincipal">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0 gap-lg-2">
+        <li class="nav-item"><a class="nav-link" routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Peliculas</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/" fragment="favoritas">Favoritas</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/" fragment="analisis">Analisis</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/" fragment="sass">Sass</a></li>
+        <li class="nav-item"><a class="nav-link" routerLink="/contactos" routerLinkActive="active">Contactos</a></li>
+      </ul>
+    </div>
+  </nav>
+</header>

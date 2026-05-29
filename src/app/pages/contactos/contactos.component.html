@@ -1,0 +1,42 @@
+<section class="container section-block">
+  <div class="section-heading">
+    <span>Contacto</span>
+    <h2>Contactos del proyecto</h2>
+    <p>Espacio para registrar mensajes relacionados con CineReview Javier y la actividad academica.</p>
+  </div>
+
+  <div class="row g-4 align-items-stretch">
+    <article class="col-12 col-lg-5">
+      <div class="analysis-card h-100">
+        <div class="analysis-card__icon">CJ</div>
+        <h3>CineReview Javier</h3>
+        <p><strong>Estudiante:</strong> Javier Andres Barrera Cardenas</p>
+        <p><strong>Curso:</strong> Desarrollo de Software Web Front-End</p>
+        <p><strong>Proyecto:</strong> Migracion Angular con Sass, routing y localStorage.</p>
+      </div>
+    </article>
+
+    <article class="col-12 col-lg-7">
+      <form class="contact-card" (ngSubmit)="enviar()">
+        <div class="row g-3">
+          <div class="col-12 col-md-6">
+            <label for="nombreContacto" class="form-label fw-semibold">Nombre</label>
+            <input id="nombreContacto" name="nombreContacto" class="form-control form-control-lg" required>
+          </div>
+          <div class="col-12 col-md-6">
+            <label for="correoContacto" class="form-label fw-semibold">Correo</label>
+            <input id="correoContacto" name="correoContacto" class="form-control form-control-lg" type="email" required>
+          </div>
+          <div class="col-12">
+            <label for="mensajeContacto" class="form-label fw-semibold">Mensaje</label>
+            <textarea id="mensajeContacto" name="mensajeContacto" class="form-control" rows="5" required></textarea>
+          </div>
+        </div>
+        <button class="btn btn-warning btn-lg fw-semibold mt-3" type="submit">Enviar mensaje</button>
+        @if (enviado) {
+          <p class="empty-state mt-3 mb-0">Mensaje registrado localmente para la demostracion.</p>
+        }
+      </form>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,225 @@
+<section class="hero text-white">
+  <div class="container hero__content">
+    <div class="row align-items-center g-5">
+      <div class="col-12 col-lg-7">
+        <span class="hero__badge">Actividad No. 3 - Profundizacion Front-End</span>
+        <h1>Catalogo web de resenas cinematograficas</h1>
+        <p class="lead">
+          Proyecto original de contextualizacion actualizado con Angular, Sass, estructura responsive,
+          componentes visuales profesionales y rutas para navegar la experiencia.
+        </p>
+        <div class="hero__actions">
+          <a href="#peliculas" class="btn btn-warning btn-lg fw-semibold">Explorar catalogo</a>
+          <a href="#sass" class="btn btn-outline-light btn-lg fw-semibold">Ver evidencia Sass</a>
+        </div>
+      </div>
+      <div class="col-12 col-lg-5">
+        <aside class="hero-panel" aria-label="Resumen del proyecto">
+          <div class="panel-tag">Migracion Angular del proyecto de contextualizacion</div>
+          <div class="hero-panel__top">
+            <span></span><span></span><span></span>
+          </div>
+          <h2>Resumen academico del proyecto</h2>
+          <p class="hero-panel__intro">
+            CineReview Javier conserva su catalogo interactivo y ahora organiza la interfaz en componentes,
+            rutas y servicios propios de Angular.
+          </p>
+          <ul class="project-specs">
+            <li><strong>Proyecto base:</strong> catalogo web de resenas cinematograficas.</li>
+            <li><strong>Objetivo:</strong> migrar el front-end a Angular manteniendo la experiencia original.</li>
+            <li><strong>Curso:</strong> Desarrollo de Software Web Front-End.</li>
+            <li><strong>Evidencia tecnica:</strong> componentes, routing, servicios, Sass y localStorage.</li>
+            <li><strong>Resultado:</strong> busqueda, filtros, favoritas, detalle y comentarios por pelicula.</li>
+          </ul>
+          <div class="hero-panel__chips" aria-label="Caracteristicas del proyecto">
+            <span>Angular</span>
+            <span>Sass integrado</span>
+            <span>Responsive</span>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container section-block" id="peliculas">
+  <div class="section-heading">
+    <span>Catalogo interactivo</span>
+    <h2>Encuentra tu proxima pelicula favorita</h2>
+    <p>
+      Explora resenas breves, filtra por genero, ordena por fecha y guarda favoritas durante la navegacion.
+    </p>
+  </div>
+
+  <div class="student-strip mb-4">
+    <div><strong>Estudiante:</strong> Javier Andres Barrera Cardenas</div>
+    <div><strong>Proyecto:</strong> PIC CineReview Javier</div>
+  </div>
+
+  <div class="row g-3 filter-panel mb-4">
+    <div class="col-12 col-md-6">
+      <label for="buscador" class="form-label fw-semibold">Buscar pelicula</label>
+      <input id="buscador" class="form-control form-control-lg" type="search" placeholder="Ejemplo: Interestelar, Coco, Avatar..." [(ngModel)]="texto">
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <label for="filtroGenero" class="form-label fw-semibold">Filtrar por genero</label>
+      <select id="filtroGenero" class="form-select form-select-lg" [(ngModel)]="genero">
+        <option value="todas">Todas</option>
+        @for (item of generos; track item) {
+          <option [value]="item">{{ item }}</option>
+        }
+      </select>
+    </div>
+    <div class="col-12 col-sm-6 col-md-3">
+      <label for="ordenFecha" class="form-label fw-semibold">Ordenar</label>
+      <select id="ordenFecha" class="form-select form-select-lg" [(ngModel)]="orden">
+        <option value="recientes">Mas recientes</option>
+        <option value="antiguas">Mas antiguas</option>
+        <option value="rating">Mejor calificacion</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="row g-3 mb-4" aria-label="Indicadores del catalogo">
+    <div class="col-12 col-md-4">
+      <div class="metric-card metric-card--primary">
+        <span>Total de peliculas</span>
+        <strong>{{ peliculasFiltradas.length }}</strong>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="metric-card metric-card--secondary">
+        <span>Promedio de rating</span>
+        <strong>{{ promedioRating | number:'1.1-1' }}</strong>
+      </div>
+    </div>
+    <div class="col-12 col-md-4">
+      <div class="metric-card metric-card--accent">
+        <span>Favoritas guardadas</span>
+        <strong>{{ favoritas.length }}</strong>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4">
+    @for (pelicula of peliculasFiltradas; track pelicula.id) {
+      <article class="col-12 col-sm-6 col-lg-4">
+        <div class="card card-pelicula h-100 shadow-sm">
+          <img class="poster" [src]="pelicula.imagen" [alt]="'Imagen representativa de ' + pelicula.titulo">
+          <div class="card-body d-flex flex-column">
+            <div class="d-flex justify-content-between align-items-start gap-2 mb-2">
+              <h3 class="h5 fw-bold mb-0">{{ pelicula.titulo }}</h3>
+              <span class="rating">* {{ pelicula.rating }}</span>
+            </div>
+            <span class="badge badge-genero align-self-start mb-3">{{ pelicula.genero }}</span>
+            <p class="small text-secondary mb-2"><strong>Estreno:</strong> {{ pelicula.fecha | date:'longDate' }}</p>
+            <p class="text-secondary flex-grow-1">{{ pelicula.resena }}</p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-dark flex-fill" [routerLink]="['/detalle', pelicula.id]">Ver detalle</a>
+              <button class="btn btn-outline-warning" type="button" (click)="agregarFavorita(pelicula.id)" [attr.aria-label]="'Agregar ' + pelicula.titulo + ' a favoritas'">Favorita</button>
+            </div>
+          </div>
+        </div>
+      </article>
+    } @empty {
+      <div class="col-12"><p class="empty-state">No se encontraron peliculas con esos filtros.</p></div>
+    }
+  </div>
+</section>
+
+<section class="section-block section-block--soft" id="favoritas">
+  <div class="container">
+    <div class="section-heading section-heading--left">
+      <span>Experiencia personalizada</span>
+      <h2>Lista de favoritas</h2>
+      <p>Las peliculas marcadas como favoritas apareceran aqui usando almacenamiento local del navegador.</p>
+    </div>
+    <div class="row g-3">
+      @for (pelicula of favoritas; track pelicula.id) {
+        <article class="col-12 col-md-6">
+          <div class="favorite-card">
+            <div>
+              <h3>{{ pelicula.titulo }}</h3>
+              <span>{{ pelicula.genero }} - * {{ pelicula.rating }}</span>
+            </div>
+            <button class="btn btn-sm btn-outline-danger" type="button" (click)="quitarFavorita(pelicula.id)">Quitar</button>
+          </div>
+        </article>
+      } @empty {
+        <div class="col-12"><p class="empty-state">Aun no has agregado peliculas favoritas.</p></div>
+      }
+    </div>
+  </div>
+</section>
+
+<section class="container section-block" id="analisis">
+  <div class="section-heading">
+    <span>Analisis del producto</span>
+    <h2>Problema, solucion y valor academico</h2>
+  </div>
+  <div class="row g-4">
+    <article class="col-12 col-lg-4">
+      <div class="analysis-card">
+        <div class="analysis-card__icon">01</div>
+        <h3>Problema</h3>
+        <p>El usuario necesita comparar peliculas de forma rapida sin perder tiempo revisando informacion desorganizada en diferentes sitios.</p>
+      </div>
+    </article>
+    <article class="col-12 col-lg-4">
+      <div class="analysis-card">
+        <div class="analysis-card__icon">02</div>
+        <h3>Solucion</h3>
+        <p>El catalogo centraliza resenas, genero, calificacion, fecha, detalle y favoritos en una interfaz responsive y facil de navegar.</p>
+      </div>
+    </article>
+    <article class="col-12 col-lg-4">
+      <div class="analysis-card">
+        <div class="analysis-card__icon">03</div>
+        <h3>Resultado</h3>
+        <p>El proyecto evidencia construccion front-end con Angular, componentes reutilizables, routing y Sass para estilos escalables.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="section-block section-block--dark" id="sass">
+  <div class="container">
+    <div class="sass-overview">
+      <div class="section-heading section-heading--left mb-0">
+        <span>Cumplimiento de la actividad</span>
+        <h2>Implementacion tecnica en la etapa de profundizacion</h2>
+        <p>
+          Esta migracion integra Sass de forma estructurada y organiza el proyecto en componentes Angular.
+        </p>
+      </div>
+      <div class="sass-summary" aria-label="Resumen de cumplimiento">
+        <div><strong>Proyecto base:</strong> CineReview Javier</div>
+        <div><strong>Entorno:</strong> Angular, Bootstrap y Sass</div>
+        <div><strong>Entrega:</strong> rutas, componentes y servicios</div>
+      </div>
+    </div>
+    <div class="row g-4 mt-1">
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="sass-card">
+          <span class="sass-card__label">Requisito 01</span>
+          <h3>Variables Sass</h3>
+          <p>Se definieron variables para paleta de color, tipografia, radios, sombras y espaciado.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-6 col-xl-4">
+        <div class="sass-card">
+          <span class="sass-card__label">Requisito 02</span>
+          <h3>Anidacion de selectores</h3>
+          <p>Los estilos de secciones, paneles, tarjetas y navegacion se organizaron con selectores anidados.</p>
+        </div>
+      </div>
+      <div class="col-12 col-md-12 col-xl-4">
+        <div class="sass-card">
+          <span class="sass-card__label">Requisito 03</span>
+          <h3>Interpolacion en Sass</h3>
+          <p>Se mantuvieron dos casos de interpolacion con <code>#&#123;$...&#125;</code> para generar clases reutilizables.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

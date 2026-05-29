@@ -1,10 +1,9 @@
 // =========================================================
-// Actividad Académica No. 3 - Profundización Front-End
-// Proyecto: PIC CineReview Javier
-// Estudiante: Javier Andrés Barrera Cárdenas
+// Actividad Academica No. 3 - Profundizacion Front-End
+// Proyecto: PIC CineReview Javier migrado a Angular
+// Estudiante: Javier Andres Barrera Cardenas
 // =========================================================
 
-// 1) Variables Sass solicitadas por la actividad
 $color-primary: #f59e0b;
 $color-secondary: #5b21b6;
 $color-dark: #101827;
@@ -18,10 +17,7 @@ $shadow-dark: 0 1.4rem 3rem rgba(2, 6, 23, 0.28);
 $transition-main: all 0.25s ease;
 $section-space: 5rem;
 
-// 2) Interpolación Sass - caso 1
 $movie-card-class: "card-pelicula";
-
-// 3) Interpolación Sass - caso 2
 $genre-badge-class: "badge-genero";
 
 * {
@@ -96,7 +92,6 @@ body {
     font-size: clamp(2.7rem, 6vw, 5.3rem);
     line-height: 0.95;
     font-weight: 950;
-    letter-spacing: -0.055em;
   }
 
   p {
@@ -131,10 +126,9 @@ body {
     color: #fde68a;
     font-size: 0.85rem;
     font-weight: 800;
-    letter-spacing: 0.03em;
 
     &::before {
-      content: "●";
+      content: "*";
       color: $color-primary;
     }
   }
@@ -183,7 +177,7 @@ body {
       color: rgba($color-light, 0.92);
 
       &::before {
-        content: "▸";
+        content: ">";
         position: absolute;
         left: 0;
         color: $color-primary;
@@ -248,7 +242,6 @@ body {
   h2 {
     font-size: clamp(2rem, 4vw, 3.25rem);
     font-weight: 950;
-    letter-spacing: -0.04em;
   }
 
   p {
@@ -257,7 +250,6 @@ body {
   }
 }
 
-.student-strip,
 .filter-panel {
   padding: 1.2rem;
   border-radius: $radius-main;
@@ -270,7 +262,11 @@ body {
   justify-content: space-between;
   gap: 1rem;
   flex-wrap: wrap;
+  padding: 1.2rem;
   border-left: 6px solid $color-primary;
+  border-radius: $radius-main;
+  background: $color-light;
+  box-shadow: 0 0.7rem 2rem rgba(15, 23, 42, 0.07);
 }
 
 .metric-card {
@@ -318,6 +314,7 @@ body {
   }
 
   .poster {
+    width: 100%;
     height: 330px;
     object-fit: cover;
   }
@@ -339,7 +336,8 @@ body {
 .favorite-card,
 .analysis-card,
 .sass-card,
-.comment-box {
+.comment-box,
+.contact-card {
   height: 100%;
   border-radius: $radius-main;
   background: $color-light;
@@ -391,7 +389,7 @@ body {
   }
 
   p {
-    margin-bottom: 0;
+    margin-bottom: 0.75rem;
     color: $color-muted;
   }
 }
@@ -468,7 +466,6 @@ body {
   h1 {
     font-size: clamp(2.1rem, 5vw, 4rem);
     font-weight: 950;
-    letter-spacing: -0.045em;
   }
 
   h2 {
@@ -485,7 +482,8 @@ body {
   border-radius: $radius-main;
 }
 
-.comment-box {
+.comment-box,
+.contact-card {
   padding: 2rem;
 }
 
