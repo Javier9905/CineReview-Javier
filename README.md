@@ -1,58 +1,89 @@
-# PIC CineReview Javier - Actividad de Profundización
+# CineReview Javier
 
-**Estudiante:** Javier Andrés Barrera Cárdenas  
-**Programa académico:** Ingeniería de Software  
-**Curso:** Desarrollo de Software Web Front-End  
-**Actividad:** Actividad Académica No. 3 - Profundización  
-**Proyecto base:** entregable_contextualizacion_Javier99 - CineReview Javier
+Catalogo web de resenas cinematograficas construido con Angular, Sass y Bootstrap. El proyecto muestra una experiencia responsive para explorar peliculas, filtrar resultados, guardar favoritas y revisar detalles con comentarios locales.
 
-## 1. Descripción general
+## Autor
 
-Este proyecto corresponde a la actualización del trabajo original de contextualización llamado **CineReview Javier**, un catálogo web de reseñas cinematográficas. Para la etapa de profundización se mejoró la estructura visual, se mantuvo la temática original y se implementó **Sass** como preprocesador CSS.
+**Javier Andres Barrera Cardenas**  
+Estudiante de Ingenieria de Software y desarrollador front-end en formacion.
 
-El sitio permite:
+- Ingles avanzado: 90%.
+- Formacion: Ingenieria de Software.
+- Certificacion reciente: pruebas TyT.
+- Enfoque profesional: desarrollo web front-end, interfaces responsive, componentes Angular y organizacion de proyectos con Git/GitHub.
 
-- Consultar películas mediante tarjetas responsive.
-- Buscar películas por título o reseña.
-- Filtrar por género.
-- Ordenar por fecha o calificación.
-- Guardar películas favoritas durante la navegación.
-- Ver una página de detalle por película.
-- Agregar comentarios locales por película.
+## Stack Tecnico
 
-## 2. Relación con la actividad académica
+- Angular 21
+- TypeScript
+- Sass / SCSS
+- Bootstrap
+- HTML5 y CSS3
+- LocalStorage
+- Git y GitHub
 
-La actividad solicita tomar el proyecto del momento evaluativo de contextualización y actualizarlo aplicando herramientas de control de versiones y Sass. Este entregable incluye:
+## Funcionalidades
 
-- Proyecto web organizado para subir a Bitbucket.
-- Archivo Sass en `scss/styles.scss`.
-- CSS compilado en `css/estilos.css`.
-- Uso de Bootstrap por CDN.
-- Funcionalidad con JavaScript en `js/script.js`.
-- Documentos de soporte para Bitbucket, video y foro.
+- Catalogo de peliculas presentado en tarjetas responsive.
+- Busqueda por titulo o resena.
+- Filtro por genero.
+- Ordenamiento por fecha o calificacion.
+- Pagina de detalle por pelicula.
+- Favoritas persistidas en `localStorage`.
+- Comentarios locales por pelicula.
+- Separacion por componentes, rutas, servicios y modelos.
 
-## 3. Evidencia Sass
+## Valor Tecnico
 
-En `scss/styles.scss` se evidencia lo solicitado:
+Este proyecto evidencia capacidades importantes para un rol junior o trainee de desarrollo web:
 
-### Variables Sass
+- Construccion de interfaces con Angular y TypeScript.
+- Manejo de estado simple usando servicios.
+- Persistencia local con `localStorage`.
+- Uso de pipes, formularios y rutas.
+- Estructura de datos tipada con modelos.
+- Estilos escalables con Sass.
+- Diseno responsive para escritorio y movil.
 
-Se usan más de 5 variables, por ejemplo:
+## Instalacion
+
+```bash
+npm install
+```
+
+## Ejecutar en Desarrollo
+
+```bash
+npm start
+```
+
+La aplicacion queda disponible normalmente en:
+
+```text
+http://localhost:4200
+```
+
+## Build
+
+```bash
+npm run build
+```
+
+El build genera los archivos de produccion en `dist/`.
+
+## Contexto Academico
+
+El proyecto nace como una actividad de profundizacion del curso Desarrollo de Software Web Front-End. La version actual migra y organiza la experiencia como aplicacion Angular, manteniendo el proposito original de CineReview Javier y elevandolo como pieza de portafolio.
+
+## Evidencia Sass
+
+El proyecto usa variables, anidacion e interpolacion en Sass. Ejemplos:
 
 ```scss
 $color-primary: #f59e0b;
 $color-secondary: #5b21b6;
-$color-dark: #101827;
-$color-muted: #64748b;
-$color-light: #ffffff;
 $font-main: "Segoe UI", system-ui, sans-serif;
-$radius-main: 1.35rem;
-$shadow-main: 0 1.2rem 2.5rem rgba(15, 23, 42, 0.12);
 ```
-
-### Anidación de selectores
-
-Se usa anidación en componentes como:
 
 ```scss
 .hero {
@@ -62,19 +93,7 @@ Se usa anidación en componentes como:
 }
 ```
 
-### 2 casos de interpolación
-
-Caso 1:
-
 ```scss
 $movie-card-class: "card-pelicula";
 .#{$movie-card-class} { }
 ```
-
-Caso 2:
-
-```scss
-$genre-badge-class: "badge-genero";
-.#{$genre-badge-class} { }
-```
-
