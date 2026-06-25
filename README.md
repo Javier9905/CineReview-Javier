@@ -2,15 +2,16 @@
 
 Catalogo web de resenas cinematograficas construido con Angular, Sass y Bootstrap. El proyecto muestra una experiencia responsive para explorar peliculas, filtrar resultados, guardar favoritas y revisar detalles con comentarios locales.
 
-## Autor
+## Perfil Publico
 
 **Javier Andres Barrera Cardenas**  
-Estudiante de Ingenieria de Software y desarrollador front-end en formacion.
+Estudiante de Ingenieria de Software y desarrollador front-end junior en formacion.
 
+- Perfil laboral: [PERFIL_DESARROLLADOR.md](PERFIL_DESARROLLADOR.md)
 - Ingles avanzado: 90%.
-- Formacion: Ingenieria de Software.
-- Certificacion reciente: pruebas TyT.
-- Enfoque profesional: desarrollo web front-end, interfaces responsive, componentes Angular y organizacion de proyectos con Git/GitHub.
+- Saber TyT Ingles: B2, 168/200, percentil nacional 100.
+- Saber TyT global: 130/200, percentil nacional 98.
+- Enfoque profesional: Angular, TypeScript, JavaScript, Sass, SQL Server, Node.js, Git y GitHub.
 
 ## Stack Tecnico
 
