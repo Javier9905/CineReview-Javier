@@ -8,6 +8,13 @@ Estudiante de sexto semestre de Ingenieria de Software y Tecnico Profesional cer
 
 Cuento con experiencia laboral en Amazon, donde he fortalecido comunicacion, seguimiento de casos, orientacion al usuario y contacto profesional con clientes de Estados Unidos.
 
+## Enlaces para Reclutadores
+
+- Proyecto principal publico: [CineReview Javier](https://github.com/Javier9905/CineReview-Javier)
+- Perfil publico en ingles: [PROFILE_DEVELOPER_EN.md](PROFILE_DEVELOPER_EN.md)
+- GitHub: [github.com/Javier9905](https://github.com/Javier9905)
+- Contacto: andresbarrera9905.ab@gmail.com
+
 ## Ingles y Resultados Destacados
 
 - Ingles avanzado: 90%.
@@ -32,9 +39,7 @@ Repositorio: [CineReview-Javier](https://github.com/Javier9905/CineReview-Javier
 
 ### Portafolio / Hoja de Vida Web
 
-Sitio personal construido con HTML, CSS y JavaScript para presentar perfil, experiencia, proyectos y contacto. Integra consumo de GitHub REST API para mostrar repositorios recientes.
-
-Repositorio: [cv-javier](https://github.com/Javier9905/cv-javier)
+Sitio personal construido con HTML, CSS y JavaScript para presentar perfil, experiencia, proyectos y contacto. Integra consumo de GitHub REST API para mostrar repositorios recientes. El repositorio se mantiene privado mientras se depuran datos personales y recursos no publicables.
 
 ### Proyecto Despacho Juridico Calendar Sync
 
