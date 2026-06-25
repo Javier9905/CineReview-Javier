@@ -8,6 +8,13 @@ Sixth-semester Software Engineering student and certified Professional Technicia
 
 I currently work at Amazon, where I have strengthened communication, case follow-up, user orientation, and professional English interaction with US customers.
 
+## Recruiter Links
+
+- Main public project: [CineReview Javier](https://github.com/Javier9905/CineReview-Javier)
+- Spanish public profile: [PERFIL_DESARROLLADOR.md](PERFIL_DESARROLLADOR.md)
+- GitHub: [github.com/Javier9905](https://github.com/Javier9905)
+- Contact: andresbarrera9905.ab@gmail.com
+
 ## English and Results
 
 - Advanced English: 90%.
@@ -32,7 +39,7 @@ Repository: [CineReview-Javier](https://github.com/Javier9905/CineReview-Javier)
 
 ### Portfolio / Resume Website
 
-Personal website built with HTML, CSS, and JavaScript to present profile, experience, projects, and contact information. It integrates the GitHub REST API to show recent repositories. The repository is currently private while public-facing materials are being refined.
+Personal website built with HTML, CSS, and JavaScript to present profile, experience, projects, and contact information. It integrates the GitHub REST API to show recent repositories. This repository is currently private while personal data and non-public assets are being cleaned.
 
 ### Legal Office Calendar Sync
 
