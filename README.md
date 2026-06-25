@@ -7,7 +7,8 @@ Catalogo web de resenas cinematograficas construido con Angular, Sass y Bootstra
 **Javier Andres Barrera Cardenas**  
 Estudiante de Ingenieria de Software y desarrollador front-end junior en formacion.
 
-- Perfil laboral: [PERFIL_DESARROLLADOR.md](PERFIL_DESARROLLADOR.md)
+- Perfil laboral ES: [PERFIL_DESARROLLADOR.md](PERFIL_DESARROLLADOR.md)
+- Developer profile EN: [PROFILE_DEVELOPER_EN.md](PROFILE_DEVELOPER_EN.md)
 - Ingles avanzado: 90%.
 - Saber TyT Ingles: B2, 168/200, percentil nacional 100.
 - Saber TyT global: 130/200, percentil nacional 98.
